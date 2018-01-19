@@ -1,5 +1,6 @@
 # -*- coding: cp1252 -*-
 from bottle import *
+import os
 
 @route('/')
 def index():
@@ -19,9 +20,10 @@ def about():
 @route('/gaman')
 def index():
     x = request.query.tala
-    return "Þetta er gildi breytunnar tala", x
+    return "Ãžetta er gildi breytunnar tala", x
 
 @error(404)
 def villa(error):
-    return "<h1>Þessi síða er ekki til</h1>"
-run(host="localhost", port=8080);
+    return "<h1>Ãžessi sÃ­Ã°a er ekki til</h1>"
+run(host="0.0.0.0", port=os.environ.get('PORT'));
+#run(host="localhost", port=8080);
